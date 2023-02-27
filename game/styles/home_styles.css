@@ -1,0 +1,272 @@
+.btn-menu{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    min-height: 50px;
+    width: 220px;
+    background-color: #801336;
+    border-radius: 10px;
+    box-shadow: 6px 6px 0px #510A32;
+    color:#2D142C;
+    font-size: 25px;
+    margin: 13px;
+    animation-duration: 0.2s;
+    animation-name: mouseout;
+    animation-fill-mode: forwards;
+}
+.btn-menu:hover{
+    cursor: default;
+    animation-duration: 0.2s;
+    animation-name: mouseover;
+    animation-fill-mode: forwards;
+}
+.btn-menu:active{
+    cursor: default;
+    animation-duration: 0.2s;
+    animation-name: mouseclick;
+    animation-fill-mode: forwards;
+}
+.animation-case{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+@keyframes mouseclick{
+    from{
+        width: 240px;
+        background-color: #801336;
+    }
+    to{
+        width: 220px;
+        background-color: #5c1e33;
+    }
+}
+@keyframes mouseover{
+    from{
+        width: 220px;
+        background-color: #801336;
+    }
+    to{
+        width: 240px;
+        background-color: #81304a;
+    }
+}
+@keyframes mouseout{
+    from{
+        width: 240px;
+        background-color: #81304a;
+    }
+    to{
+        width: 220px;
+        background-color: #801336;
+    }
+}
+
+.footer-text{
+    color: #801336;
+    font-size: 25px;
+    text-align: center;
+}
+.box-party-settings{
+    background-color: #801336;
+    box-shadow: 15px 15px 0px #510A32;
+    border-radius: 10px;
+    width: 225px;
+    height: 225px;
+    text-align: center;
+    padding: 15px;
+    color: #510A32;
+    display: flex;
+    flex-direction: column;
+}
+.title-party-settings{
+    color: #801336;
+    font-size: 25px;
+    margin-left: -200px;
+    margin-bottom: 100px;
+}
+.box-party-settings-title{
+    font-size: 20px;
+}
+.party-settings-layout{
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+}
+.party-settings-stepbar{
+    display: flex;
+    align-items: center;
+    background-color: #801336;
+    box-shadow: 2px 2px 0px #510A32;
+    width: 300px;
+    height: 7px;
+    border-radius: 10px;
+    margin-bottom: 75px;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #801336;
+    font-size: 11px;
+}
+.party-settings-stepbar-info{
+    margin-bottom: 35px;
+    display: flex;
+    flex-direction: column;
+    flex:1;
+}
+
+.party-settings-stepbar-sphere-big{
+    width: 25px;
+    height: 25px;
+    background-color: #801336;
+    border-radius: 100%;
+    animation: sphere_anim 0.7s linear infinite;
+}
+.party-settings-stepbar-sphere-little{
+    width: 20px;
+    height: 20px;
+    background-color: #801336;
+    border-radius: 100%;
+}
+
+@keyframes sphere_anim{
+    0%{
+        width: 25px;
+        height: 25px;
+    }
+    50%{
+        width: 35px;
+        height: 35px;
+    }
+    100%{
+        width: 25px;
+        height: 25px;
+    } 
+}
+.arrow-left{
+    margin-left: 30px;
+    margin-right: 20px;
+}
+.arrow-right{
+    margin: 25px;
+}
+.arrow{
+    width:50px;
+    animation: arrow_out 0.1s linear forwards;
+}
+.arrow:hover{
+    animation: arrow_hover 0.1s linear forwards;
+}
+.arrow:active{
+    animation: arrow_active 0.1s linear forwards;
+}
+@keyframes arrow_hover{
+    from{
+        width:50px;
+        height: 50px;
+    }
+    to{
+        width:60px;
+        height: 60px; 
+    }
+}
+
+@keyframes arrow_out{
+    from{
+        width:60px;
+        height: 60px;
+    }
+    to{
+        width:50px;
+        height: 50px; 
+    }
+}
+
+@keyframes arrow_active{
+    from{
+        width:60px;
+        height: 60px;
+    }
+    to{
+        width:45px;
+        height: 45px; 
+    }
+}
+.cards-number-setting{
+    animation: zoom_out 0.1s linear forwards;
+}
+.cards-number-setting:hover{
+    animation: zoom_in 0.1s linear forwards;
+}
+.cards-number-setting:active{
+    animation: zoom_active 0.1s linear forwards;
+}
+@keyframes zoom_active{
+    from{
+        width:30%;
+    }
+    to{
+        width: 20%;
+    }
+}
+@keyframes zoom_in{
+    from{
+        width:25%;
+    }
+    to{
+        width: 30%;
+    }
+}
+@keyframes zoom_out{
+    from{
+        width:30%;
+    }
+    to{
+        width: 25%;
+    }
+}
+
+.box-party-settings-content{
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    flex-direction: column;
+}
+.simple-box-content{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    flex-direction: column;
+}
+
+#settingNumberPlayer{
+    background-color: #510A32;
+    height: 60px;
+    width: 60px;
+    border: none;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 20%;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.player-name-input{
+    background-color: #510A32;
+    border: none;
+    color:white;
+    height: 22px;
+    margin: 5px;
+    border-radius: 4px;
+    text-align: center;
+}
+.bg-card-diff-selected{
+    background-color: #2D142C;
+}

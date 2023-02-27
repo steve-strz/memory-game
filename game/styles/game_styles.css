@@ -1,0 +1,228 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.application{
+    display:flex;
+    flex-direction: row;
+    min-height: 90vh;
+    background-color: #2D142C;
+}
+.left-panel{
+    display: flex;
+    background-color: #801336;
+    min-width: 300px;
+    margin-left: -100px;
+    height: 80vh;
+    max-height: 750px;
+    min-height: 450px;
+    border-bottom-right-radius:  20px;
+    border-top-right-radius:  20px;
+    box-shadow: 13px 13px 0px #510A32;
+}
+.content-left-panel{
+    margin-left: 100px;
+    margin-top: 10px;
+    color:white;
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+}
+.content-left-panel-players-list{
+    display: flex;
+    flex:7;
+    flex-direction: column;
+}
+.players-list-element{
+    display: flex;
+    justify-content: center;
+    margin-left: 20px;
+    margin-top: 10px;
+    flex-direction: column;
+}
+.players-list-element-score{
+    text-align: center;
+    font-size: 20px;
+}
+.content-left-panel-player-turn{
+    display: flex;
+    flex:2;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-direction: column;
+}
+.content-left-panel-player-turn-box{
+    width: 90%;
+    height: 50px;
+    background-color: #2D142C;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+.game-plateform{
+    display:flex;
+    flex-direction: column;
+    margin-left: 20px;
+    flex-grow: 1;
+    align-items: center;
+}
+.timer-content{
+    display: flex;
+    flex:1;
+    justify-content: center;
+}
+.timer-box{
+    width: 300px;
+    height: 55px;
+    background-color: #801336;
+    box-shadow: 6px 6px 0px #510A32;
+    border-radius: 10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.timer{
+    color: white;
+    font-size: 40px;
+}
+.cards-content{
+    display: flex;
+    flex: 9;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    margin: 50px 0;
+    justify-content: center;
+    width: 750px;
+}
+.card{
+    max-width: 80px;
+    min-width: 80px;
+    margin: 0 5px;
+    animation: card_spawn 0.25s linear normal;
+    opacity: 1;
+}
+.card-rotate-show1-class{
+    animation: card_rotate_show1 0.15s linear normal;
+}
+.card-rotate-show2-class{
+    animation: card_rotate_show2 0.15s linear forwards;
+}
+.card-rotate-hide1-class{
+    animation: card_rotate_hide1 0.15s linear normal;
+}
+.card-rotate-hide2-class{
+    animation: card_rotate_hide2 0.15s linear forwards;
+}
+.card-found{
+    opacity: 0.5;
+}
+.card img{
+    border: 3px solid transparent;
+}
+.card img:hover{
+    border: 3px solid white;
+    border-radius: 10%;
+}
+@keyframes card_rotate_show1{
+    from{
+        transform: rotateY(0);
+    }
+    to{
+        transform: rotateY(90deg);
+    }
+}
+@keyframes card_rotate_show2{
+    from{
+        transform: rotateY(270deg);
+    }
+    to{
+        transform: rotateY(360deg);
+    }
+}
+@keyframes card_rotate_hide1{
+    from{
+        transform: rotateY(360deg);
+    }
+    to{
+        transform: rotateY(270deg);
+    }
+}
+@keyframes card_rotate_hide2{
+    from{
+        transform: rotateY(90deg);
+    }
+    to{
+        transform: rotateY(0deg);
+    }
+}
+@keyframes card_spawn{
+    from{
+        max-width: 100px;
+        opacity: 0;
+    }
+    to{
+        max-width: 80px;
+        opacity: 1;
+    }
+}
+.box-end-game{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    animation: end_game 0.2s linear forwards;
+}
+@keyframes end_game{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.content-end-game{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    height: 180px;
+    width: 35%;
+    min-width: 320px;
+    background-color: #801336;
+    box-shadow: 15px 15px 0px #510A32;
+    border-radius: 10px;
+    flex-direction: column;
+    opacity: 1;
+}
+.content-end-game-title{
+    font-size: 30px;
+    margin-top: 10px;
+    color: #2D142C;
+    display: flex;
+}
+.content-end-game-ranking{
+    margin-top: 20px;
+    display: flex;
+    font-size: 35px;
+    color:white;
+    text-align: center;
+}
+.content-end-game-btn-box{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+}
+.content-end-game-total-time{
+    font-size: 15px;
+    margin-top: 10px;
+    color:white;
+    display: flex;
+    flex-direction: row;
+}

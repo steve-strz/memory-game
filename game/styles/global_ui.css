@@ -1,0 +1,90 @@
+@font-face {
+    font-family: "Comforta";
+    src: url("../fonts/COMFORTAA-BOLD.TTF");
+}
+html{
+    background-color: #2D142C;
+    font-family: Comforta;
+    user-select: none;
+}
+.layout{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+}
+.btn-simple{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 250px;
+    background-color: #801336;
+    border-radius: 10px;
+    box-shadow: 6px 6px 0px #510A32;
+    color:#2D142C;
+    font-size: 25px;
+    animation: mouseout2 0.1s linear forwards
+}
+
+.btn-simple:hover{
+    animation: mouseover2 0.1s linear forwards
+}
+.btn-simple:active{
+    animation: mouseclic2 0.1s linear forwards
+}
+@keyframes mouseclic2{
+    from{
+        width: 250px;
+        background-color: #801336;
+    }
+    to{
+        width: 230px;
+        background-color: #5c1e33;
+    }
+}
+@keyframes mouseover2{
+    from{
+        width: 250px;
+        background-color: #801336;
+    }
+    to{
+        width: 270px;
+        background-color: #81304a;
+    }
+}
+@keyframes mouseout2{
+    from{
+        width: 270px;
+        background-color: #81304a;
+    }
+    to{
+        width: 250px;
+        background-color: #801336;
+    }
+}
+
+.fadein{
+    animation: fadein_anim 0.5s linear forwards
+}
+.fadeout{
+    animation: fadeout_anim 0.5s linear forwards
+}
+
+@keyframes fadein_anim{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes fadeout_anim{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}

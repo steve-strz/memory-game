@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HOME</title>
+        <link rel="stylesheet" href="styles/global_ui.css"/>
+        <link rel="stylesheet" href="styles/icon_menu_animations.css"/>
+        <link rel="stylesheet" href="styles/home_styles.css"/>
+        <link rel="stylesheet" href="styles/settings.css"/>
+    </head>
+    <body>
+        <audio autoplay loop>
+            <source src="./sounds/background_game_sound.mp3" type="audio/ogg">
+            <embed src="./sounds/background_game_sound.mp3" autostart="true" loop="true" hidden="true"> 
+        </audio>
+        <!-- HOME MENU LAYOUT -->
+        <div id="homeMenu">
+            <div class="layout">
+                <img src="img/memory_title.png" width="400px" style="margin-bottom: 100px;"/>
+                <div class="btn-menu" style="margin-right: 125px;" onclick="goTo('homeMenu','partySettings')">
+                    START
+                </div>
+                <div class="btn-menu" onclick="goTo('homeMenu', 'settings')">
+                    SETTINGS
+                </div>
+                <div class="btn-menu" style="margin-left: 125px;" onclick="goTo('homeMenu', 'aboutUs')">
+                    ABOUT US
+                </div>
+            </div>
+            <div class="animation-case">
+                <img src="img/trex.png" width="60px" class="trex" style="margin-right: 80%;"/>
+            </div>
+            <footer>
+                <p class="footer-text">MADE BY E-GROUP CORP</p>
+            </footer>
+        </div>
+
+        <!-- START - PARTY SETTINGS -->
+        <div id="partySettings" style="display: none; margin-top: 30px;">
+            <div class="layout">
+                <div class="title-party-settings">
+                    GAME <br/>
+                    SETTINGS
+                </div>
+                <div class="party-settings-stepbar">
+                    <div class="party-settings-stepbar-info">
+                        <p>DIFFICULTY</p>
+                        <div id="sphere1" class="party-settings-stepbar-sphere-big"></div>
+                    </div>
+                    <div class="party-settings-stepbar-info" style="align-items: center; flex:2">
+                        <p>NUMBER OF PLAYERS</p>
+                        <div id="sphere2" class="party-settings-stepbar-sphere-little"></div>
+                    </div>
+                    <div class="party-settings-stepbar-info" style="align-items: flex-end;">
+                        <p>NAMES</p>
+                        <div id="sphere3" class="party-settings-stepbar-sphere-little"></div>
+                    </div>
+                </div>
+                <div class="party-settings-layout">
+                    <div class="arrow-left" onclick="setSettingsStep('back')"> 
+                       <img src="img/arrow_left.png" class="arrow"/>
+                    </div>
+                    <div id="partySettingsForm1">
+                        <div class="box-party-settings">
+                            <div class="box-party-settings-title">
+                                DIFFICULTY
+                            </div>
+                            <div class="box-party-settings-content" style="justify-content: space-around; flex-direction: row; margin-top: 60px; height: 60px;">
+                                <img src="img/settings_cardNumber12.png" width="25%" class="cards-number-setting" onclick="setGameDifficulty(12)"/>
+                                <img src="img/settings_cardNumber16.png" width="25%" class="cards-number-setting" onclick="setGameDifficulty(16)"/>
+                                <img src="img/settings_cardNumber20.png" width="25%" class="cards-number-setting" onclick="setGameDifficulty(20)"/>
+                            </div>
+                            <div>
+                                <img id="difficultySelected" src="img/settings_cardNumber12.png" width="18%" style="margin-top: 20px;"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="partySettingsForm2" style="display: none;">
+                        <div class="box-party-settings">
+                            <div class="box-party-settings-title">
+                                NUMBER OF PLAYERS
+                            </div>
+                            <div class="box-party-settings-content">
+                                <input type="number" value="2" id="settingNumberPlayer" min="2" max="5" onchange="setPlayerNumber()"/>
+                                <p style="font-weight: 600;">Min : 2 | Max : 5</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="partySettingsForm3" style="display: none;">
+                        <div class="box-party-settings">
+                            <div class="box-party-settings-title">
+                                NAMES
+                            </div>
+                            <div class="box-party-settings-content" id="playersNameBox">
+                                <input type='text' value='Player 1' id='playerNameBox1' class='player-name-input'/>
+                                <input type='text' value='Player 2' id='playerNameBox2' class='player-name-input'/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="arrow-right" onclick="setSettingsStep('up')">
+                        <img src="img/arrow_right.png" class="arrow"/>
+                     </div>
+                </div>
+                <div class="btn-simple" style="margin-top: 150px;" onclick="checkEmptySetting()">
+                    PLAY
+                </div>                
+                <div class="btn-simple" style="margin-top: 26px;" onclick="backTo('partySettings','homeMenu')">
+                    BACK
+                </div>
+            </div>
+        </div>
+        <!-- SETTINGS -->
+        <div id="settings" style="display: none; margin-top: 30px;">
+            <div class="layout">
+                <img src="img/memory_title.png" width="400px" style="margin-bottom: 100px;"/>
+                <div class="party-settings-layout">
+                    <div id="partySettingsForm1">
+                        <div class="box-party-settings">
+                            <div class="box-party-settings-title">
+                                SETTINGS
+                            </div>
+                            <div class="simple-box-content">
+                                <p style="font-size: 16px;">
+                                    SOUNDS
+                                    <label class="switch">
+                                        <input type="checkbox" checked onclick="setSounds(this)" id="settingSetSounds"/>
+                                        <span class="slider round"></span>
+                                    </label>
+                                </p>
+                                <p style="font-size: 16px;">
+                                    MUSIC
+                                    <label class="switch">
+                                        <input type="checkbox" checked onclick="setMusic(this)" id="settingSetMusic"/>
+                                        <span class="slider round"></span>
+                                    </label>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-simple" style="margin-top: 106px;" onclick="backTo('settings', 'homeMenu')">
+                    BACK
+                </div>
+            </div>
+        </div>
+        <!-- ABOUT US -->
+        <div id="aboutUs" style="display: none; margin-top: 30px;">
+            <div class="layout">
+                <img src="img/memory_title.png" width="400px" style="margin-bottom: 100px;"/>
+                <div class="party-settings-layout">
+                    <div id="partySettingsForm1">
+                        <div class="box-party-settings">
+                            <div class="box-party-settings-title">
+                                FAQ
+                            </div>
+                            <div class="simple-box-content">
+                                <p style="font-weight: 600;">
+                                    This game was made for a university project.<br/>
+                                    <br/>The members of this project are:<br/>
+                                    <br/>LECLERE Yann<br/>
+                                    REALINI Christophe<br/>
+                                    STRAZZERI Steve</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-simple" style="margin-top: 106px;" onclick="backTo('aboutUs', 'homeMenu')">
+                    BACK
+                </div>
+            </div>
+        </div>
+        <script src="js/navigation.js"></script>
+        <script src="js/game_settings.js"></script>
+        <script src="js/localStorage_controller.js"></script>
+    </body>
+</html>

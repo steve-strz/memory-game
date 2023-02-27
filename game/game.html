@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GAME</title>
+        <link rel="stylesheet" href="styles/global_ui.css"/>
+        <link rel="stylesheet" href="styles/game_styles.css"/>
+    </head>
+    <body >
+        <div class="application">
+            <div id="endGameContent" class="box-end-game" style="display: none;">
+                <div class="content-end-game">
+                    <div class="content-end-game-title">
+                        END GAME
+                    </div>
+                    <div class="content-end-game-ranking">
+                        playerName
+                    </div>
+                    <div class="content-end-game-total-time">
+                        
+                    </div>
+                </div>
+                <div class="content-end-game-btn-box">
+                    <div class="btn-simple" style="margin-right: 10px;" onclick="restartGame()">
+                        RESTART
+                    </div>
+                    <div class="btn-simple" style="margin-left: 10px;" onclick="quit()">
+                        QUIT
+                    </div>
+                </div>
+            </div>
+            <div class="left-panel">
+                <div class="content-left-panel">
+                    <div class="content-left-panel-players-list" id="playerList">
+                    </div>
+                    <div class="content-left-panel-player-turn">
+                        au tour de ..
+                        <div class="content-left-panel-player-turn-box" id="playerTurnText">
+                            Wait..
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="game-plateform" id="gamePlatform">
+                <div class="timer-content">
+                    <div class="timer-box">
+                        <div class="timer" id="clock">
+                            00 : 00
+                        </div>
+                    </div>
+                </div>
+                <div class="cards-content" id="cardsContent">
+                </div>
+            </div>
+        </div>
+        <div id="pressMusicTips" style="text-align: center; font-size: large; color: #801336; display: none;">
+            Press "M" to start music.
+        </div>
+        <script src="js/localStorage_controller.js"></script>
+        <script src="js/game_manager.js"></script>
+        <script src="js/Player.js"></script>
+        <script src="js/Card.js"></script>
+        <script src="js/navigation.js"></script>
+        <script src="js/Timer.js"></script>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+.trex{
+    animation: trex_anim 3s linear infinite;
+}
+@keyframes trex_anim{
+    0%{
+        margin-right: 80%;
+        opacity: 0;
+    }
+    10%{
+        opacity: 1;
+    }
+    90%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        margin-left: 80%;
+        margin-right: 0%;
+    }
+}
